@@ -1,0 +1,11 @@
+---
+# tasks file for game
+
+- name: Create folders
+  ansible.builtin.include_tasks: create_folders.yml
+
+- name: Install depends
+  ansible.builtin.include_tasks: install_depends.yml
+
+- name: Install package
+  ansible.builtin.include_tasks: install_package.yml

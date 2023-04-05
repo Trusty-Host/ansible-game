@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include steamcmd"
+      include_role:
+        name: "steamcmd"

@@ -1,0 +1,13 @@
+---
+
+- name: Check steamcmd exists
+  ansible.builtin.stat:
+    path: "{{ steamcmd_path }}/steamcmd.sh"
+  register: steancnd_file
+
+- name: Download and unarchive steamcmd
+  ansible.builtin.unarchive:
+    src: "http://media.steampowered.com/client/steamcmd_linux.tar.gz"
+    dest: "{{ steamcmd_path }}"
+    remote_src: true
+  when: not steancnd_file.stat.exists

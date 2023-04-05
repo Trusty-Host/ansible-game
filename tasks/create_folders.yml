@@ -1,0 +1,41 @@
+---
+# create folders
+
+- name: Create folders
+  ansible.builtin.file:
+    dest: "{{ folders }}"
+    state: directory
+  loop:
+    - /path/cmd
+    - /path/maps
+    - /servers
+    - /path/cs
+    - /path/css
+    - /path/cssold
+    - /path/csgo
+    - /path/samp
+    - /path/crmp
+    - /path/mta
+    - /path/mc
+    - /path/update/cs
+    - /path/update/css
+    - /path/update/cssold
+    - /path/update/csgo
+    - /path/update/mta
+    - /path/update/crmp
+    - /path/update/samp
+    - /path/update/mc
+    - /path/maps/cs
+    - /path/maps/css
+    - /path/maps/cssold
+    - /path/maps/csgo
+    - /servers/cs
+    - /servers/css
+    - /servers/cssold
+    - /servers/csgo
+    - /servers/mta
+    - /servers/samp
+    - /servers/crmp
+    - /servers/mc
+  loop_control:
+    loop_var: folders

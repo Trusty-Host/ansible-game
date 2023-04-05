@@ -1,0 +1,4 @@
+---
+# defaults file for steamcmd
+
+steamcmd_path: "/path/cmd"

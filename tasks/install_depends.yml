@@ -1,0 +1,13 @@
+---
+# install depends
+
+- name: Install depends steamcmd package
+  ansible.builtin.apt:
+    name: "{{ for_steam_package }}"
+    state: present
+    update_cache: true
+  loop:
+    - lib32gcc-s1
+    - lib32stdc++6
+  loop_control:
+    loop_var: for_steam_package
