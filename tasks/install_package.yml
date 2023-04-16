@@ -10,4 +10,9 @@
     src: "http://media.steampowered.com/client/steamcmd_linux.tar.gz"
     dest: "{{ steamcmd_path }}"
     remote_src: true
+    mode: "0755"
   when: not steancnd_file.stat.exists
+
+#TODO: Фикс костыль
+- name: Start steamcmd
+  ansible.builtin.command: "{{ steamcmd_path }}/steamcmd.sh +quit"
