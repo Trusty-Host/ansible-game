@@ -1,0 +1,16 @@
+---
+# configurate game
+
+- name: Copy base server archive
+  ansible.builtin.copy:
+    src: "base_server.tar.gz"
+    dest: "/path/base_server.tar.gz"
+    mode: "0644"
+
+- name: Unarchive base server
+  ansible.builtin.unarchive:
+    src: "/path/base_server.tar.gz"
+    dest: "/path"
+    remote_src: true
+    owner: root
+    group: root
