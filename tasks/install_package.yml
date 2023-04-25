@@ -16,3 +16,9 @@
 #TODO: Фикс костыль
 - name: Start steamcmd
   ansible.builtin.command: "{{ steamcmd_path }}/steamcmd.sh +quit"
+
+- name: Install screen package
+  ansible.builtin.apt:
+    name: "screen"
+    state: present
+    update_cache: true
