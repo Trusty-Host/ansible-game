@@ -4,6 +4,9 @@
 - name: Create folders
   ansible.builtin.include_tasks: create_folders.yml
 
+- name: Configurate game
+  ansible.builtin.include_tasks: configurate_game.yml
+
 - name: Install depends
   ansible.builtin.include_tasks: install_depends.yml
 
