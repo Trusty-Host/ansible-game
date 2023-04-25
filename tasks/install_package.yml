@@ -22,3 +22,9 @@
     name: "screen"
     state: present
     update_cache: true
+
+- name: Install lib32z1 package
+  ansible.builtin.apt:
+    name: "lib32z1"
+    state: present
+    update_cache: true
